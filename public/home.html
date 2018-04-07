@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game Hater</title>
+        <link rel="stylesheet" href="./stylesheets/style.css"/>
+        <script src="./ajax.js"></script>
+    </head>
+    
+    <body>
+        <br>
+            <h1><img id='header' src='GameHaterHead.png' alt='The Game Hater'></h1>
+        <br>
+
+        <h2 id="subHeader">Review Game</h2>
+
+        <div class="mainTextBox blackBack">
+            <form id="postReview" action="/createReview" method='post'> 
+                Have you ever been so hyped to play a game just to find out it was
+                actually garbage upon playing it?  If yes, do you now feel the burden of
+                responsiblity to warn people against it?  If yes again, this site is for you.
+                Please feel free to leave a review on any game you either want to praise or hate.
+                In either case, it's up to you!<br><br>
+
+                Game Title: <br>
+                <input name="title" type="text"><br><br>
+
+                Review: <br>
+                <textarea name="content" rows='10' cols='148'></textarea><br><br>
+
+                <input id="btnGetReviews" type="button" onclick="getReviews()" 
+                        class="justifyRight" style="top:5px; margin-right: .5%;" value="Refresh Review List">
+                <input type="submit" class="justifyRight" style="top:5px; margin-right: 30px;" value="Submit Review">
+
+                Score: <select name="score">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <br>
+            </form>
+        </div>
+
+        <div id="reviews">
+            
+        </div>
+    </body>
+</html>
