@@ -22,9 +22,11 @@ function handleCreateReview(req, res) {
 }
 
 function handleReviewList(req, res) {
-	console.log('Getting all reviews');
+    let sortType = req.params.sort;
 
-	reviewModel.getReviewList(function(err, result) {
+    console.log('Getting all reviews');
+
+	reviewModel.getReviewList(sortType, function(err, result) {
         if ( err ) {
             console.log(err)
         } else {

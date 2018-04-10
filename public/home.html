@@ -27,9 +27,13 @@
                 Review: <br>
                 <textarea name="content" rows='10' cols='148'></textarea><br><br>
 
-                <input id="btnGetReviews" type="button" onclick="getReviews()" 
-                        class="justifyRight" style="top:5px; margin-right: .5%;" value="Refresh Review List">
-                <input type="submit" class="justifyRight" style="top:5px; margin-right: 30px;" value="Submit Review">
+                <input type="submit" class="justifyRight" style="top:5px; margin-right: 5px;" value="Submit Review">
+                
+                <input id="btnSortByScore" type="button" onclick="getReviews('score')" 
+                        class="justifyRight" style="top:5px; margin-right: 5%;" value="Sort by top score">
+                        
+                <input id="btnSortById" type="button" onclick="getReviews('id')" 
+                        class="justifyRight" style="top:5px; margin-right: 5%;" value="Sort by most recent">
 
                 Score: <select name="score">
                     <option value="1">1</option>

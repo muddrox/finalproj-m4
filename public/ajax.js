@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
      * First I will retrieve all
      * reviews from the database
      *******************************/
-    getReviews();
+    getReviews('id');
 
     /******************************
      * Now I will add listners for
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     });
 });
 
-function getReviews() {
+function getReviews(sortType) {
     let request = new XMLHttpRequest();
 
     request.addEventListener('load', function(e){
@@ -77,6 +77,6 @@ function getReviews() {
         }
     });
 
-    request.open('GET', '/getReviews', true);
+    request.open('GET', `/getReviews/${sortType}`, true);
     request.send();
 }

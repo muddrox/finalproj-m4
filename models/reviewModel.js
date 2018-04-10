@@ -29,11 +29,14 @@ function createReview(review, callback) {
 	})
 }
 
-function getReviewList(callback) {
+function getReviewList(sortType, callback) {
 
+    console.log(`Sort Type: ${sortType}`);
     console.log("attempting to connect to database.");
 
-	pool.query('SELECT *  FROM reviews ORDER BY id DESC', function(err, res) {
+    let queryString = `SELECT *  FROM reviews ORDER BY ${sortType} DESC`
+
+	pool.query(queryString, function(err, res) {
         if (err) {
 			callback(err, null);
 		} else {
